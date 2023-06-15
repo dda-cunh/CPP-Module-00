@@ -1,4 +1,4 @@
-#include "PhoneBook.hpp"
+#include "../inc/PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -18,10 +18,10 @@ void PhoneBook::printContact(int index)
 {
 	Contact	contact = this->contacts[index];
 
-	// std::cout << "         " << index << "|";
-	// print_trunc(contact.fname, 0);
-	// print_trunc(contact.lname, 0);
-	// print_trunc(contact.nname, 1);
+	std::cout << "         " << index << "|";
+	print_trunc(contact.fname, 0);
+	print_trunc(contact.lname, 0);
+	print_trunc(contact.nname, 1);
 	std::cout << std::endl;
 }
 

@@ -1,7 +1,9 @@
-#include "PhoneBook.hpp"
+#include "../inc/PhoneBook.hpp"
 
 void	search_event(PhoneBook *book)
 {
+	std::cout << std::endl <<
+		"     index|first name| last name|  nickname" << std::endl;
 	for (int i = 0; i < 8; i++)
 		book->printContact(i);
 	return ;

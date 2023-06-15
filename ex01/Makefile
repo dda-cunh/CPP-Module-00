@@ -3,11 +3,15 @@ NAME		= 	PhoneBook
 
 CC 			= 	c++
 
-CFLAGS		= 	-Wall -Wextra -Werror -std=c++98
+CFLAGS		= 	-Wall -Wextra -Werror -std=c++98 #-g
 
 RM 			= 	rm -f
 
-SRC			=	PhoneBook.cpp Contact.cpp utils.cpp main.cpp
+SRC_PATH	=	src/
+
+SRC_		=	PhoneBook.cpp Contact.cpp utils.cpp main.cpp
+
+SRC			=	$(addprefix $(SRC_PATH), $(SRC_))
 
 GREEN		= 	\033[0;32m
 
@@ -19,10 +23,7 @@ $(NAME):		$(SRC)
 
 all: 			$(NAME)
 
-clean:	
-				$(RM) $(OBJ)
-
-fclean:			clean
+fclean:
 				$(RM) $(NAME)
 
 re:				fclean	all
@@ -39,4 +40,4 @@ done:
 				printf "$(GREEN)                     |_|                        $(RESET)\n"
 				printf "																\n"
 
-.PHONY: 		all clean fclean re
+.PHONY: 		all fclean re
