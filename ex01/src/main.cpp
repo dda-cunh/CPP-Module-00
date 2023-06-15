@@ -1,5 +1,4 @@
 #include "../inc/PhoneBook.hpp"
-#include <string>
 
 void	search_event(PhoneBook *book)
 {
