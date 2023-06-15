@@ -1,4 +1,5 @@
 #include "../inc/PhoneBook.hpp"
+#include <string>
 
 void	search_event(PhoneBook *book)
 {
@@ -11,24 +12,17 @@ void	search_event(PhoneBook *book)
 
 void	add_event(PhoneBook *book)
 {
-	std::string	fname;
-	std::string	lname;
-	std::string	nname;
-	std::string	number;
-	std::string	secret;
 	Contact		contact;
+	std::string	dataNames[5] = {"first name", "last name", "nickname",
+								"phone number","darkest secret"};
+	std::string	data[5];
 
-	std::cout << "Please insert the first name of the contact:\t";
-	std::cin >> fname;
-	std::cout << "Please insert the last name:\t";
-	std::cin >> lname;
-	std::cout << "Please insert the nick name:\t";
-	std::cin >> nname;
-	std::cout << "Please insert the number:\t";
-	std::cin >> number;
-	std::cout << "Please insert the darkest secret about " + fname + ":\t";
-	std::cin >> secret;
-	contact = Contact(fname, lname, nname, number, secret);
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << "Please insert the " + dataNames[i] + ":\t";
+		std::cin >> data[i];
+	}
+	contact = Contact(data[0], data[1], data[2], data[3], data[4]);
 	book->addContact(contact);
 	std::cout << "Contact created" << std::endl;
 	return ;
