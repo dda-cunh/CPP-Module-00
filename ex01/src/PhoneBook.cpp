@@ -8,6 +8,8 @@ PhoneBook::PhoneBook(void)
 
 void	PhoneBook::addContact(Contact obj)
 {
+	if (!obj.fname.size())
+		return ;
 	if (this->lastI == 8)
 		this->lastI = 0;
 	this->contacts[lastI] = obj;
@@ -28,4 +30,11 @@ void PhoneBook::printContact(int index)
 PhoneBook::~PhoneBook(void)
 {
 	return ;
+}
+
+Contact & PhoneBook::getContact(int index)
+{
+	if (index < 0 || index > 7)
+		return (contacts[0]);
+	return (contacts[index]);
 }

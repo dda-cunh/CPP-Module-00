@@ -13,6 +13,8 @@ class	Contact
 		Contact(std::string, std::string, std::string, std::string, std::string);
 		~Contact(void);
 
+		void	printInfo(void);
+
 	private:
 		std::string	secret;
 		std::string	number;

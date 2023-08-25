@@ -11,6 +11,7 @@ class	PhoneBook
 		void printContact(int);
 		~PhoneBook(void);
 
+		Contact & getContact(int index);
 	private:
 		Contact	contacts[8];
 		int		lastI;

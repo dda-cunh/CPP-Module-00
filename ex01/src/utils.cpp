@@ -18,3 +18,12 @@ void    print_trunc(std::string s, int last)
 	if (!last)
 		std::cout << "|";
 }
+
+unsigned long	sToUL(std::string & str, unsigned long index, long factor)
+{
+	if (index >= str.size())
+		return (0);
+	if (str[index] < 0x30 || str[index] > 0x39)
+		return (-1);
+	return (((int)str[index] - 48) * factor + sToUL(str, index + 1, factor / 10));
+}
